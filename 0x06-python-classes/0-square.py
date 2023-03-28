@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""docstring for Square"""
+"""Square module.
+
+This module contains a class that defines a square.
+
+"""
 
 
 class Square:
-    """docstring for init"""
-    def __init__(self):
-        pass
+    """Defines a square."""
+
+    pass

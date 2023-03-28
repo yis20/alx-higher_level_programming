@@ -1,32 +1,45 @@
 #!/usr/bin/python3
-"""docstring for Square"""
+"""This is a square module.
+
+This module contains a class that defines a square, initialise
+its size, verify that given values are integers and greater than
+or equal to 0. A getter and setter method to get or set the values.
+An area method that returns the area of the square, and a method that prints.
+
+"""
 
 
 class Square:
-    """docstring for init"""
+    """Defines a square"""
+
     def __init__(self, size=0):
+        """Sets the size attribute of the square object.
+        Args:
+            size(int): the size of one side of the square.
+        """
         self.size = size
-    """size getter method"""
+
     @property
     def size(self):
+        """Get or set the size of the square"""
         return self.__size
-    """size setter method"""
+
     @size.setter
     def size(self, value):
-        if isinstance(value, int) and value >= 0:
-            self.__size = value
-        elif not isinstance(value, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-    """calculate the area of square"""
+        self.__size = value
+
     def area(self):
-        return (self.size ** 2)
-    """print hashtag of squares by the size given"""
+        """Returns the current square area."""
+        return self.__size ** 2
+
     def my_print(self):
-        # print(self.size)
-        if self.size == 0:
-            print("")
-        elif self.size > 0:
-            for i in range(self.size):
-                print("#" * self.size)
+        """Print in stdout the size of the square"""
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__size):
+                print("#" * self.__size)

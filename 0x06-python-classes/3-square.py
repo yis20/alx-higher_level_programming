@@ -1,16 +1,30 @@
 #!/usr/bin/python3
-"""docstring for Square"""
+"""This is a square module.
+This module contains a class that defines a square
+initialise its size and verify that its size is an integer
+and it is greater than or equal to 0.
+"""
 
 
 class Square:
-    """docstring for init"""
+    """Defines a square"""
+
     def __init__(self, size=0):
-        if isinstance(size, int) and size >= 0:
-            self.__size = size
-        elif not isinstance(size, int):
+        """Sets the size attribute of the square object.
+        Args:
+            size(int): the size of one side of the square.
+        Raises:
+            TypeError: if size is an integer.
+            ValueError: if size is grater than or equal to 0.
+        """
+        if type(size) is int:
+            if size >= 0:
+                self.__size = size
+            else:
+                raise ValueError("size must be >= 0")
+        else:
             raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
 
     def area(self):
-        return (self.__size ** 2)
+        """Returns the current square area."""
+        return self.__size ** 2
