@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-"""Square Class
-
-This class don't do anything for the moment
-
-"""
+"""docstring for Square"""
 
 
 class Square:
-    pass
+    """docstring for init"""
+    def __init__(self):
+        pass
